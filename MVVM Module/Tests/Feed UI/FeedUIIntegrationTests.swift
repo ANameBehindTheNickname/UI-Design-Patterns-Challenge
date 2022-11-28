@@ -90,6 +90,16 @@ final class FeedUIIntegrationTests: XCTestCase {
 		XCTAssertEqual(sut.errorMessage, nil, "Expected no error view during user initiated feed reload")
 	}
 
+	func test_errorView_dismissesErrorMessageTap() {
+		let (sut, loader) = makeSUT()
+
+		sut.loadViewIfNeeded()
+		loader.completeFeedLoadingWithError()
+		sut.simulateTapOnErrorMessage()
+
+		XCTAssertEqual(sut.errorMessage, nil, "Expected error view to dismiss after user taps on it")
+	}
+
 	func test_feedImageView_loadsImageURLWhenVisible() {
 		let image0 = makeImage(url: URL(string: "http://url-0.com")!)
 		let image1 = makeImage(url: URL(string: "http://url-1.com")!)
