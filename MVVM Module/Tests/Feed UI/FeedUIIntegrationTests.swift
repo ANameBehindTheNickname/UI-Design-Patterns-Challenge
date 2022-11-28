@@ -82,7 +82,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 
 		sut.loadViewIfNeeded()
 
-		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view once view is loaded")
+		XCTAssertNil(sut.errorMessage, "Expected no error view once view is loaded")
 	}
 
 	func test_errorView_isNotVisibleOnLoadFeedCompletionWithSuccess() {
@@ -91,7 +91,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 		sut.loadViewIfNeeded()
 		loader.completeFeedLoading()
 
-		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view once loading completes successfully")
+		XCTAssertNil(sut.errorMessage, "Expected no error view once loading completes successfully")
 	}
 
 	func test_errorView_isVisibleOnLoadFeedCompletionWithError() {
@@ -100,7 +100,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 		sut.loadViewIfNeeded()
 		loader.completeFeedLoadingWithError()
 
-		XCTAssertTrue(sut.isShowingErrorView, "Expected error view once loading completes with error")
+		XCTAssertNotNil(sut.errorMessage, "Expected error view once loading completes with error")
 	}
 
 	func test_errorView_isNotVisibleOnUserInitiatedFeedReload() {
@@ -108,7 +108,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 
 		sut.simulateUserInitiatedFeedReload()
 
-		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view during user initiated feed reload")
+		XCTAssertNil(sut.errorMessage, "Expected no error view during user initiated feed reload")
 	}
 
 	func test_errorView_isNotVisibleOnUserInitiatedFeedReloadCompletionWithSuccess() {
@@ -117,7 +117,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 		sut.simulateUserInitiatedFeedReload()
 		loader.completeFeedLoading()
 
-		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view once user initiated loading completes successfully")
+		XCTAssertNil(sut.errorMessage, "Expected no error view once user initiated loading completes successfully")
 	}
 
 	func test_errorView_isVisibleOnUserInitiatedFeedReloadCompletionWithError() {
@@ -126,7 +126,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 		sut.simulateUserInitiatedFeedReload()
 		loader.completeFeedLoadingWithError()
 
-		XCTAssertTrue(sut.isShowingErrorView, "Expected error view once user initiated loading completes with error")
+		XCTAssertNotNil(sut.errorMessage, "Expected error view once user initiated loading completes with error")
 	}
 
 	func test_feedImageView_loadsImageURLWhenVisible() {

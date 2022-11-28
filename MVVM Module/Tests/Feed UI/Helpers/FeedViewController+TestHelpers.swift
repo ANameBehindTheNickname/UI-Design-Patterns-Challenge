@@ -40,12 +40,12 @@ extension FeedViewController {
 		ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
 	}
 
-	var isShowingLoadingIndicator: Bool {
-		return refreshControl?.isRefreshing == true
+	var errorMessage: String? {
+		errorView?.message
 	}
 
-	var isShowingErrorView: Bool {
-		errorView?.isHidden == false
+	var isShowingLoadingIndicator: Bool {
+		return refreshControl?.isRefreshing == true
 	}
 
 	func numberOfRenderedFeedImageViews() -> Int {
