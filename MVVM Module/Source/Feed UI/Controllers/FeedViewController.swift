@@ -38,6 +38,8 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 		viewModel?.onFailedStateChange = { [weak self] isFailed in
 			if !isFailed {
 				self?.errorView?.isHidden = true
+			} else {
+				self?.errorView?.isHidden = false
 			}
 		}
 	}
