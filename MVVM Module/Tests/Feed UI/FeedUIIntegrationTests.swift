@@ -85,6 +85,15 @@ final class FeedUIIntegrationTests: XCTestCase {
 		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view once view is loaded")
 	}
 
+	func test_errorView_isNotVisibleOnLoadFeedCompletionWithSuccess() {
+		let (sut, loader) = makeSUT()
+
+		sut.loadViewIfNeeded()
+		loader.completeFeedLoading()
+
+		XCTAssertFalse(sut.isShowingErrorView, "Expected no error view once loading completes successfully")
+	}
+
 	func test_feedImageView_loadsImageURLWhenVisible() {
 		let image0 = makeImage(url: URL(string: "http://url-0.com")!)
 		let image1 = makeImage(url: URL(string: "http://url-1.com")!)
