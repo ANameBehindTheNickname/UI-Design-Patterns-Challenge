@@ -107,15 +107,15 @@ final class FeedUIIntegrationTests: XCTestCase {
 		XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second image URL request once second view also becomes visible")
 	}
 
-//	func test_errorView_dismissesErrorMessageTap() {
-//		let (sut, loader) = makeSUT()
-//
-//		sut.loadViewIfNeeded()
-//		loader.completeFeedLoadingWithError()
-//		sut.simulateTapOnErrorMessage()
-//
-//		XCTAssertEqual(sut.errorMessage, nil, "Expected error view to dismiss after user taps on it")
-//	}
+	func test_errorView_dismissesErrorMessageTap() {
+		let (sut, loader) = makeSUT()
+
+		sut.loadViewIfNeeded()
+		loader.completeFeedLoadingWithError()
+		sut.simulateTapOnErrorMessage()
+
+		XCTAssertEqual(sut.errorMessage, nil, "Expected error view to dismiss after user taps on it")
+	}
 
 	func test_feedImageView_cancelsImageLoadingWhenNotVisibleAnymore() {
 		let image0 = makeImage(url: URL(string: "http://url-0.com")!)
