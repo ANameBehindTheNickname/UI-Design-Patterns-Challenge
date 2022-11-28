@@ -18,7 +18,6 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 
-		errorView?.isHidden = true
 		refresh()
 	}
 
@@ -33,6 +32,12 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 				self?.refreshControl?.beginRefreshing()
 			} else {
 				self?.refreshControl?.endRefreshing()
+			}
+		}
+
+		viewModel?.onFailedStateChange = { [weak self] isFailed in
+			if !isFailed {
+				self?.errorView?.isHidden = true
 			}
 		}
 	}
