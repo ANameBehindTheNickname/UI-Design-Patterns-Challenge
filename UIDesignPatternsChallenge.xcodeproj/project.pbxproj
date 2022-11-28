@@ -144,6 +144,7 @@
 		27A9A4F324C76163009EBB8F /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A9A4F224C76163009EBB8F /* UIViewController+Snapshot.swift */; };
 		F82388CA2934F83700B6E404 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82388C92934F83700B6E404 /* FeedErrorViewModel.swift */; };
 		F892E3ED2935006500F1476D /* FeedErrorViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F892E3EC2935006500F1476D /* FeedErrorViewAdapter.swift */; };
+		F892E3EF2935043300F1476D /* FeedErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F892E3EE2935043300F1476D /* FeedErrorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +370,7 @@
 		27A9A4F224C76163009EBB8F /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
 		F82388C92934F83700B6E404 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
 		F892E3EC2935006500F1476D /* FeedErrorViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewAdapter.swift; sourceTree = "<group>"; };
+		F892E3EE2935043300F1476D /* FeedErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -908,6 +910,7 @@
 			children = (
 				08F3B69D2322585E00510CE7 /* FeedImageCellController.swift */,
 				08F3B69E2322585E00510CE7 /* FeedViewController.swift */,
+				F892E3EE2935043300F1476D /* FeedErrorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1571,6 +1574,7 @@
 				08F3B6BA2322585E00510CE7 /* FeedImageCell.swift in Sources */,
 				08F3B6B52322585E00510CE7 /* FeedLoaderPresentationAdapter.swift in Sources */,
 				08F3B6B12322585E00510CE7 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
+				F892E3EF2935043300F1476D /* FeedErrorViewController.swift in Sources */,
 				08F3B6B22322585E00510CE7 /* MainQueueDispatchDecorator.swift in Sources */,
 				08F3B6B92322585E00510CE7 /* UITableView+Dequeueing.swift in Sources */,
 				08F3B6C12322585E00510CE7 /* FeedLoadingViewModel.swift in Sources */,

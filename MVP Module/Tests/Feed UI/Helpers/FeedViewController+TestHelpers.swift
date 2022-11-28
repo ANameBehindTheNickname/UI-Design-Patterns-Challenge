@@ -41,7 +41,7 @@ extension FeedViewController {
 	}
 
 	var errorMessage: String? {
-		errorView?.message
+		errorViewController?.errorView?.message
 	}
 
 	var isShowingLoadingIndicator: Bool {
