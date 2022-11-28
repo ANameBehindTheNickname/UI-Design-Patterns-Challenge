@@ -36,7 +36,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 			self?.refreshControl?.beginRefreshing()
 		}
 
-		viewModel?.onFailedStateChange = { [weak self] errorMessage in
+		viewModel?.onFeedLoadError = { [weak self] errorMessage in
 			guard let message = errorMessage else {
 				self?.errorView?.hideMessage()
 				return
