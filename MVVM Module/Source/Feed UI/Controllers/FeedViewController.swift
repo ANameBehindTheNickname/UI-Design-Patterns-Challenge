@@ -28,19 +28,21 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 	func bind() {
 		title = viewModel?.title
 		viewModel?.onLoadingStateChange = { [weak self] isLoading in
-			if isLoading {
-				self?.refreshControl?.beginRefreshing()
-			} else {
+			guard isLoading else {
 				self?.refreshControl?.endRefreshing()
+				return
 			}
+
+			self?.refreshControl?.beginRefreshing()
 		}
 
 		viewModel?.onFailedStateChange = { [weak self] errorMessage in
-			if let message = errorMessage {
-				self?.errorView?.show(message: message)
-			} else {
+			guard let message = errorMessage else {
 				self?.errorView?.hideMessage()
+				return
 			}
+
+			self?.errorView?.show(message: message)
 		}
 	}
 
