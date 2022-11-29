@@ -11,7 +11,7 @@ final class FeedErrorViewAdapter: FeedErrorView {
 	}
 
 	func display(_ viewModel: FeedErrorViewModel) {
-		guard let errorMessage = viewModel.errorMessage else {
+		guard let errorMessage = viewModel.message else {
 			controller?.errorViewController?.hideErrorMessage()
 			return
 		}

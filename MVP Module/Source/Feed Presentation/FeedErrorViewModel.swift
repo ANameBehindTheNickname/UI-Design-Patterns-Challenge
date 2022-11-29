@@ -4,5 +4,13 @@
 //
 
 struct FeedErrorViewModel {
-	let errorMessage: String?
+	let message: String?
+
+	static var noError: Self {
+		.init(message: nil)
+	}
+
+	static func error(message: String) -> Self {
+		.init(message: message)
+	}
 }
